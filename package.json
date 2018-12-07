@@ -1,0 +1,71 @@
+{
+  "name": "vue-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.conf.js",
+    "dev:proxy": "cross-env PROXY=true npm run dev",
+    "build:yf": "cross-env BUILD_TYPE=yf npm run build",
+    "build": " rimraf dist && cross-env NODE_ENV=production webpack --progress --config build/webpack.prod.conf.js",
+    "analyze": "cross-env NODE_ENV=production ANALYZE=true npm run build"
+  },
+  "author": "yawuling",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@vue/babel-preset-app": "^3.2.0",
+    "@vue/preload-webpack-plugin": "^1.1.0",
+    "address": "^1.0.3",
+    "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.4",
+    "chalk": "^2.4.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "mockjs": "^1.0.1-beta3",
+    "node-notifier": "^5.3.0",
+    "node-sass": "^4.10.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "portfinder": "^1.0.20",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.26.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
