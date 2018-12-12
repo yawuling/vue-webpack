@@ -130,7 +130,7 @@ exports.mockApi = (app) => {
       }
     })
 
-    app.post(item, (req, res) => {
+    app.post(`${item.path}/*`, (req, res) => {
       let paramsName = req.params[0]
       if (paramsName.includes('.')) {
         paramsName = paramsName.split('.')[0]
